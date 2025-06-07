@@ -26,7 +26,10 @@ RUN groupadd --gid $USER_GID $USERNAME 2>/dev/null || true \
         useradd -m $USERNAME 2>/dev/null || \
         usermod -d /home/$USERNAME -m $USERNAME 2>/dev/null || true) \
     && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && usermod -aG sudo $USERNAME \
+    && chown -R $USERNAME:$USERNAME /home \
+    && chmod -R 755 /home
 
 USER $USERNAME
-WORKDIR /workspace
+WORKDIR /home/workspace

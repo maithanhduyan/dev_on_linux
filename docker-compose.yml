@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/workspace:cached
+      - .:/home/workspace:cached
     command: sleep infinity
     tty: true

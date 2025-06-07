@@ -2,7 +2,7 @@
   "name": "Ubuntu 24.04 Dev",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "dev",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/home/",
   "extensions": [ ],
   "postCreateCommand": "echo 'Welcome to Ubuntu 24.04 Dev Container!'"
 }
